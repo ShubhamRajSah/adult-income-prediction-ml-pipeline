@@ -74,7 +74,7 @@ model_pipeline = Pipeline([
     ('model', LogisticRegression(max_iter=1000, class_weight='balanced'))
 ])
 
-# model_pipeline.fit(x_train, y_train)
+model_pipeline.fit(x_train, y_train)
 
 from sklearn.metrics import classification_report, confusion_matrix
 
@@ -84,7 +84,7 @@ print('CONFUSION MATRIX\n', confusion_matrix(y_test, y_pred))
 print("CLASSIFICATION REPORT\n", classification_report(y_test, y_pred))
 
 
-# print("----------RANDOM FOREST CLASSIFIER-----------")
+print("----------RANDOM FOREST CLASSIFIER-----------")
 from sklearn.ensemble import RandomForestClassifier
 
 rf_pipeline = Pipeline([
@@ -137,7 +137,9 @@ feature_importance_df = pd.DataFrame({
     "importance": importance
 }).sort_values(by="importance", ascending=False)
 
-# print(feature_importance_df.head(10))
+print(feature_importance_df.head(10))  # for top 10 features
+
+# for first ten features
 for i in range(10):
     print(i, all_features[i])
 print(all_features[32])
