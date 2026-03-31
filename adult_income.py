@@ -25,7 +25,6 @@ df['age_group'] = pd.cut(df['age'],
                          labels= ["Young", "Adult", "Mid", "Senior"])
 
 
-
 df['hours_group'] = pd.cut(df['hours-per-week'],
                            bins=[0, 25, 40, 60, 100],
                            labels=["Part-time", "Normal", "Overtime", "Heavy"])
